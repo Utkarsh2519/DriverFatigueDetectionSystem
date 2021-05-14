@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drowsy</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'b.css' %}">
+</head>
+<body>
+
+<div class="bg-image">
+  <img src="{% static 'drowsiness2.jpg' %}" height="1000px" width="1600px" align="center" >
+</div>
+
+<div class="bg-text">
+  <h2>Welcome to Driver Fatigue Detector System</h2>
+  <h1 style="font-size:50px"></h1>
+  <p>Click on Start</p><!--start button-->
+  <form method="post" action="/drowse">{% csrf_token %}
+    <input type="text" name="myvalue">
+    <button type="submit" class="submit" >START</button>
+  </form>
+  <p>Press 'Q' to stop</p>
+</div>
+
+
+</body>
+</html>
